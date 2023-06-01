@@ -1,0 +1,49 @@
+.profiles__container{
+    background-color: #141414;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profiles__text h1{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.profiles__user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+.profiles__user img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+    margin-right: 20px;
+    
+}
+
+.profiles__user h1{
+    color: white;
+    font-size: 30px;
+    padding: 40px;
+}
+
+.profiles__buton{
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px;
+}   

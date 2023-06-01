@@ -1,0 +1,36 @@
+.navbar{
+    height: 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    
+}
+.navbar__bg{
+    background-color:black;
+    transition: all 0.5s ease;
+}
+
+.navbar__logo{
+    width: 100px;
+    height: 25px;
+    margin: 0 40px;
+    cursor: pointer;
+}
+
+.navbar__avatar{
+    width: 40px;
+    height: 40px;
+    margin: 0 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.navbar__search{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    color: aliceblue;
+    cursor: pointer;
+}

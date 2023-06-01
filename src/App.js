@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import HomePage from "./Pages/HomePage";
+import LoginPage from "./Pages/LoginPage";
+import { auth } from "./firebase";
+import { useEffect , useState } from "react";
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Profiles from "./Pages/Profiles";
+
+function App() {  
+  const [user, setUser] = useState({})
+    useEffect(()=>{
+      auth.onAuthStateChanged((userAuth)=>{
+        if(userAuth){
+          setUser({email:userAuth.email,uid:userAuth.uid}); 
+        }else{
+          
+        }
+      });
+     
+    },[])
+
+    console.log(user);
+    console.log(user.email);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {user.email=== undefined || user.uid === undefined ? (<LoginPage/>)
+      :(<Routes>
+        <Route exect path="/" element={<HomePage />}/> 
+        <Route path="/profile" element={<Profiles user={user} setUser={setUser} />}/>
+        
+        </Routes>)}
+      
+    </Router>
+   
   );
 }
 
